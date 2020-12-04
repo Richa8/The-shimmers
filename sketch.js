@@ -7,11 +7,11 @@ var boxes=[];
 var ground;
 var i=0;
 function setup(){
-    var canvas = createCanvas(1200,800);
+    var canvas = createCanvas(windowWidth,windowHeight);
     engine = Engine.create();
     world = engine.world;  
     
-    ground = Bodies.rectangle(600,780,1200,10,{isStatic:true});
+    ground = Bodies.rectangle(width/2,height-20,width,10,{isStatic:true});
     World.add(world,ground)
 }
 
@@ -28,5 +28,5 @@ function draw(){
         boxes[j].show();
     }
     rectMode(CENTER)
-    rect(ground.position.x,ground.position.y,1200,10);
+    rect(ground.position.x,ground.position.y,width,10);
 }
